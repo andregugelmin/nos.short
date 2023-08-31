@@ -20,7 +20,6 @@ const Main = styled.div`
 	width: 100%;
 	gap: 8px;
 	margin-top: 20px;
-	margin-bottom: 108px;
 
 	h1 {
 		color: #09090b;
@@ -42,11 +41,9 @@ const Main = styled.div`
 
 	@media (min-height: 800px) {
 		margin-top: 70px;
-		margin-bottom: 130px;
 	}
 
 	@media (min-height: 1000px) {
 		margin-top: 121px;
-		margin-bottom: 160px;
 	}
 `;

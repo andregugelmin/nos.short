@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import copy from "copy-to-clipboard";
 
@@ -18,11 +19,14 @@ export default function SearchBar() {
 	const [urlCreated, setUrlCreated] = useState(false);
 	const [buttonFunction, setButtonFunction] = useState(()=>submitURL);
 
+	const navigate = useNavigate();
 	let shortUrl = "";
+	let originalUrl = "";
 
 	useEffect(() => {
 		if(createShortLinkData){			
 			handleShotUrl(createShortLinkData);
+			saveLocally(createShortLinkData);
 			console.log(createShortLinkData);
 		}
 	}, [createShortLinkData]);
@@ -37,23 +41,37 @@ export default function SearchBar() {
 		shortUrl = data.link_url;
 	}
 
+	function saveLocally(data){
+		let listName = "nos-short-links";
+		let list_url = JSON.parse(localStorage.getItem(listName) || "[]");
+		let now = new Date().getTime()/1000;
+		console.log(now);
+		list_url.push({
+			originalLink: data.url,
+			shortLink: data.link_url,
+			ttl: data.ttl,
+			createdAt: now,
+		});
+		
+		localStorage.setItem(listName, JSON.stringify(list_url));
+	}
+
 	const handleChange = (event) => {		
 		setURL(event.target.value);
-
+		originalUrl = event.target.value;
 		if(isValidUrl(event.target.value)){
 			setButtonState("unlocked");
 		}
 		else setButtonState("locked");
-		
 	};	
 
 	async function submitURL(){
-		setInputDisabled(true);
-		setButtonState("active");
 		const signupData = {
-			url,
+			url: originalUrl,
 			ttl: 600
 		};
+		setInputDisabled(true);
+		setButtonState("active");
 		await createShortLink(signupData);
 	}
 
@@ -88,7 +106,7 @@ export default function SearchBar() {
 						</div>
 						<Button buttonImg = {buttonImg} buttonState = {buttonState} buttonFunction = {buttonFunction}></Button>
 					</Bar>
-					<a>Visualizar os últimos links encurtados</a>
+					<a onClick={() => navigate("/all-links")}>Visualizar os últimos links encurtados</a>
 				</Main>
 				: 
 				<Main>
@@ -98,8 +116,8 @@ export default function SearchBar() {
 						</div>
 						<Button buttonImg = {buttonImg} buttonState = {buttonState} buttonFunction = {buttonFunction}></Button>
 					</Bar>
-					<a>Visualizar os últimos links encurtados</a>
-					<a>Voltar para encurtar mais links</a>
+					<a onClick={() => navigate("/all-links")}>Visualizar os últimos links encurtados</a>
+					<a onClick={() => location.reload()}>Voltar para encurtar mais links</a>
 				</Main>
 			}			
 		</>
@@ -109,6 +127,7 @@ export default function SearchBar() {
 const Main = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-top: 108px;
 
 	a {
 		color: #27272a;
@@ -122,6 +141,14 @@ const Main = styled.div`
 	}
 	a:hover{
 		cursor: pointer;
+	}
+
+	@media (min-height: 800px) {
+		margin-top: 130px;
+	}
+
+	@media (min-height: 1000px) {
+		margin-top: 160px;
 	}
 `;
 
