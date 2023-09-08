@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# <p align = "center"> nós.short </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+   <img src="https://raw.githubusercontent.com/andregugelmin/nos.short/36125d00aba26062fadaebf71e296ebe1d83f969/src/assets/images/Logo.svg" width="110"/>
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+<div align="center">
+  <img src="https://img.shields.io/badge/React-316192?style=for-the-badge&logo=react&logoColor=white" height="30px"/>
+  <img src="https://img.shields.io/badge/JavaScript-007ACC?style=for-the-badge&logo=javascript&logoColor=white" height="30px"/>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  :clipboard: Descrição
 
-### `npm test`
+Um site, encurtador de link, realizado para o processo seletivo para fazer parte do NÓS Nosso Olhar Solidário, um aplicativo sem fins lucrativos destinado a conectar pessoas com a missão de ser um laço entre quem quer ajudar e quem quer ajuda. Para isso, é feito a divulgação de  ações solidárias e suas necessidades de produtos e serviços voluntários, sem envolver nenhum tipo de transação comercial
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Instagram: https://www.instagram.com/nos.app/
 
-### `npm run build`
+Disponíveis nas lojas de aplicativos:
+ - Android (http://bit.ly/nosandroid)
+ - Apple (http://bit.ly/nosapple)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Encurtador de link utlizado: https://url.dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+***
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :computer: Tecnologias e Conceitos
 
-### `npm run eject`
+- React
+- Axios
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+***
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚧: Como rodar localmente
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone este repositório
+2. Instale as dependências
+```bash
+npm i
+```
+3. Rode com
+```bash
+npm run start
+```
+***
